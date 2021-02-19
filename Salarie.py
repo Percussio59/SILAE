@@ -1,5 +1,5 @@
 import xlrd, sys, os
-
+import winsound
 from Formule import fillon
 
 
@@ -8,16 +8,18 @@ resultat = slice(1,24,2)
 
 
 #ATTENTION A BIEN RESPECTER LE FORMAT DES TUPLES (Penser à développer un gestionnaire de fichier de conf)
+#FICHIER MODIFIE
 PARAMETRES ={
     "brut":("","Brut","R"),
     "brutabattu":("","Brut AL avec RS","R"),
-    "frais":(("F11", "repas","R"),("F13","repas","R")),
+    "frais":("F11", "Indemnité de repas","R"),
     "heures":("","Heures travaillées","R"),
     "absences":(("","Sous-total Absences","R"),("C","Congés payés","R")),
     "heuressup":(("","Heures supplémentaires 25%","B"),("","Heures supplémentaires 50%","B")),
     "reductions_logiciel":(("SS011.4","Réduction générale des cotisations patronales","R"),("AA311.4","Réduct. générale des cotisat. pat. retraite","R")),
     "assedic":(("CH001","Assurance chômage TrA+TrB","R")),
-    "salaire_de_base":("","Salaire de base")
+    "salaire_de_base":("","Salaire de base"),
+    "CP":(("CP001","Congés payés","R"),("CP003","OPP BTP","R")),
 }
 
 
@@ -53,15 +55,20 @@ class Salarie:
 
         #ON AFFECTE LES LISTES A NOS ATTRIBUTS (les listes ont toutes la meme taille de 12 éléments au départ)
         self.brut = self.chercher_valeurs(PARAMETRES["brut"])[per:]
+        self.frais = self.chercher_valeurs(PARAMETRES["frais"])[per:]
         self.brutabattu = self.chercher_valeurs(PARAMETRES["brutabattu"])[per:]
         self.heures = self.chercher_valeurs(PARAMETRES["heures"])[per:]
         self.heuressup = self.chercher_valeurs(PARAMETRES["heuressup"])[per:]
         self.absences = self.chercher_valeurs(PARAMETRES["absences"])[per:]
         self.reductions_logiciel = self.chercher_valeurs(PARAMETRES["reductions_logiciel"])[per:]
         self.salaire_de_base = self.chercher_valeurs(PARAMETRES["salaire_de_base"])[per:]
-        self.reduction_calculee = fillon(sum(self.heures),sum(self.brut), sum(self.brutabattu), Salarie.ANNEE)
+        self.CP = (100/90) if sum(self.chercher_valeurs(PARAMETRES["CP"])[per:]) !=0 else 1
+        
+            
+        
+        self.reduction_calculee = fillon(sum(self.heures),sum(self.brut) - sum(self.frais), sum(self.brutabattu), Salarie.ANNEE) * self.CP 
         #DRAPEAU POUR CONDITION ULTERIEURE
-        self.assedic = sum(self.chercher_valeurs(PARAMETRES["assedic"])) != 0
+        self.reduction_calculee = 0 if sum(self.chercher_valeurs(PARAMETRES["assedic"])) == 0 else self.reduction_calculee
         
         
         
@@ -193,11 +200,12 @@ class Salarie:
             else:
                 os.system("cls")
                 print("ERREUR, LA FEUILLE NE CORRESPOND PAS AU FORMAT ATTENDU")
-                print("MERCI D'EXTRAIRE DEPUIS SILAE UNE FICHE INDIVIDUELLE DETAILLEE")
+                print("MERCI D'EXTRAIRE DEPUIS SILAE UNE FICHE INDIVIDUELLE DETAILLEE AVEC LES BASES")
+                return False
                 sys.exit()
         except:
                 print("ERREUR, LA FEUILLE NE CORRESPOND PAS AU FORMAT ATTENDU")
-                print("MERCI D'EXTRAIRE DEPUIS SILAE UNE FICHE INDIVIDUELLE DETAILLEE")
+                print("MERCI D'EXTRAIRE DEPUIS SILAE UNE FICHE INDIVIDUELLE DETAILLEE AVEC LES BASES")
                 sys.exit()
 
     #ON DEFINIT LA PERIODE DE TRAVAIL EN DEFINISSANT UN SLICE

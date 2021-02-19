@@ -29,13 +29,13 @@ def imprime_tableau():
                
         table.add_row(
             str(personne.nom), str(personne.prenom), 
-            "%.2f" %round(sum(personne.heures),2),
-            "%.2f" %round(sum(personne.brut),2),
-            "%.2f" %round(sum(personne.brutabattu),2),
-            "%.2f" %round(sum(personne.reductions_logiciel),2),
-            "%.2f" %personne.reduction_calculee,
+            "%.2f" %round(sum(personne.heures),2) if sum(personne.heures) !=0 else "",
+            "%.2f" %round(sum(personne.brut),2) if sum(personne.brut) !=0 else "",
+            "%.2f" %round(sum(personne.brutabattu),2) if sum(personne.brutabattu) !=0 else "",
+            "%.2f" %round(sum(personne.reductions_logiciel),2) if sum(personne.reductions_logiciel) !=0 else "",
+            "%.2f" %personne.reduction_calculee if personne.reduction_calculee !=0 else"",
 
-            "%.2f" %ecart
+            "%.2f" %ecart if ecart !=0 else ""
         )
     #ET ON AJOUTE LES TOTAUX
     table.add_row("")
