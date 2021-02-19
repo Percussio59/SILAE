@@ -17,10 +17,12 @@ else:
         for elt in classeur:
             elt = Salarie(elt)
     
-        sorties.imprime_tableau()
+        
     except:
         
         print("Quelque chose n'a pas fonctionné")
         print("Merci de vérifier le nom de votre fichier")
         print("Utilisation : principal.py monfichier.xls")
+sorties.imprime_tableau()
+sorties.exporte_pdf()
 

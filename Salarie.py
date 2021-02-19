@@ -77,7 +77,7 @@ class Salarie:
         del self.dict
 
     def __repr__(self):
-        print("La classe Salarie représente un salarié et les attributs qu'il récupère dans les données qu'il contient dans le dictionnaire 'dict'")
+        return "L'instance repésente {} {}".format(self.nom, self.prenom)
 
 
     #ON TRAVAILLE LA PREMIERE CELLULE DE CHAQUE FEUILLE POUR EXTRAIRE LE NOM ET LE PRENOM

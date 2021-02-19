@@ -36,7 +36,7 @@ def imprime_tableau():
             "%.2f" %round(sum(personne.reductions_logiciel),2) if sum(personne.reductions_logiciel) !=0 else "",
             "%.2f" %personne.reduction_calculee if personne.reduction_calculee !=0 else"",
 
-            "%.2f" %ecart if ecart !=0 else ""
+            "%.2f" %ecart if ecart !=0 else "",
         )
     #ET ON AJOUTE LES TOTAUX
     table.add_row("")
@@ -53,3 +53,8 @@ def imprime_tableau():
 
 
     console.print(table)
+
+
+def exporte_pdf():
+    for personne in Salarie.LISTE_SALARIES:
+        print(personne)
