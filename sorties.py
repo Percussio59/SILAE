@@ -1,3 +1,5 @@
+from fpdf import FPDF
+
 from rich.console import Console
 from rich.table import Table
 from Salarie import Salarie
@@ -55,6 +57,48 @@ def imprime_tableau():
     console.print(table)
 
 
+    
+
+    
+
+        
+
+
+
 def exporte_pdf():
     for personne in Salarie.LISTE_SALARIES:
         print(personne)
+
+
+    pdf = FPDF('L','mm','A4')
+    pdf.add_page()
+    pdf.set_font("Arial","B", 12)
+    pdf.cell(190,10, "CONTROLE DES REDUCTIONS GENERALES DE COTISATIONS", 1,0,"C")
+
+
+    titre = [("NOM",30), ("PRENOM",30), ("HEURES",25),("BRUT",25), ("BRUT ABAT.",25),("FRAIS",25), ("LOGICIEL",30),("CALCULEE",30), ("ECART",30)]
+    pdf.set_font("Arial","B",10)
+    pdf.ln(15)
+    for tit in titre:
+        pdf.cell(tit[1],10,tit[0],1,0,align="C")
+    pdf.ln()
+
+    for personne in Salarie.LISTE_SALARIES:
+        print(personne)
+        
+        pdf.cell(30,10,personne.nom,1)
+        pdf.cell(30,10,personne.prenom,1)
+        donnees = personne.get_salarie()
+        print(donnees)
+        for num,elt in enumerate(donnees):
+            if num > 1:
+                pdf.cell(titre[num][1],10,"%.2f" %elt,1,0,align="R")
+                
+        pdf.ln()
+            
+    pdf.output("tuto.pdf","F")
+    
+
+
+
+    
