@@ -171,6 +171,7 @@ class Salarie:
         totalheures = 0
         total_reductions_logiciel = 0
         total_redutions_calculees = 0
+        total_frais = 0
 
 
         for elt in Salarie.LISTE_SALARIES:
@@ -179,8 +180,10 @@ class Salarie:
             totalheures += round(sum(elt.heures),2)
             total_reductions_logiciel += round(sum(elt.reductions_logiciel),2)
             total_redutions_calculees += round(elt.reduction_calculee,2)
+            total_frais += round(sum(elt.frais),2)
 
-        return [totalbrut, totalbrutabattu, totalheures, total_reductions_logiciel, total_redutions_calculees]
+
+        return [totalheures, totalbrut, totalbrutabattu,  total_frais, total_reductions_logiciel, total_redutions_calculees]
 
     #ON VERIFIE QUE LA FEUILLE SOIT BIEN AU FORMAT ATTENDU
     @staticmethod

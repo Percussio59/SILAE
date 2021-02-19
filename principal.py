@@ -5,7 +5,7 @@ import sorties
 from Salarie import Salarie
 
 
-classeur = xlrd.open_workbook("DRAPIER2021.xls")
+classeur = xlrd.open_workbook("DRAPIER2020.xls")
 os.system("cls")
 for elt in classeur:
     elt = Salarie(elt)
