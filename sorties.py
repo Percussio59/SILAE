@@ -19,7 +19,7 @@ class PDF(FPDF):
         self.cell(40,0,"Date : " + str(date.today().strftime("%d/%m/%Y")),0,0,align="L")
         self.cell(210,0,"DOSSIER",0,0,align="C")
         
-        self.cell(40,0,"Page : ",0,0,align="L")
+        self.cell(30,0,'Page %s' % self.page_no() + '/{nb}',0,0,align="R")
 
 
 
@@ -77,6 +77,7 @@ def exporte_pdf():
     
     #ON CREE LE FICHIER PDF
     pdf = PDF()
+    pdf.alias_nb_pages()
     pdf.add_page()
 
     #ON DEFINI LE TITRE DU DOCUMENT
@@ -132,5 +133,15 @@ def exporte_pdf():
     
 
 
-
-    
+def exporte_dictionnaire():
+    dictionnaire = {}
+    dict_interne = {}
+    for num, personne in enumerate(Salarie.LISTE_SALARIES):
+        for cle, valeurs in personne.__dict__.items():
+            if cle !="feuille":
+                
+                dict_interne[cle]=getattr(personne, cle)
+                dictionnaire[num] = dict_interne
+                dict_interne={}
+        print(dictionnaire)
+ 

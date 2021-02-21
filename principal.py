@@ -25,4 +25,5 @@ else:
         print("Utilisation : principal.py monfichier.xls")
 sorties.imprime_tableau()
 sorties.exporte_pdf()
+sorties.exporte_dictionnaire()
 
