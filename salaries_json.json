@@ -1,0 +1,755 @@
+{
+   "nom": "BARAN",
+   "prenom": "AMELINE ",
+   "brut": [
+      2836.4
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      2836.4
+   ],
+   "heures": [
+      34.5
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -121.17
+   ],
+   "reductions_logiciel": [
+      0
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 0.0
+}{
+   "nom": "BARBERY",
+   "prenom": "NOELLIE MARIE ",
+   "brut": [
+      1131.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1131.62
+   ],
+   "heures": [
+      107.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -50.0
+   ],
+   "reductions_logiciel": [
+      -338.81
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 338.81
+}{
+   "nom": "BEAUGRAND",
+   "prenom": "ISABELLE ",
+   "brut": [
+      1738.12
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1738.12
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -461.64000000000004
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 461.64
+}{
+   "nom": "BROUSSE",
+   "prenom": "CHLOE ",
+   "brut": [
+      358.75
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      358.75
+   ],
+   "heures": [
+      35.0
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -116.67
+   ],
+   "reductions_logiciel": [
+      -115.02
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 115.02
+}{
+   "nom": "CASAGRANDE",
+   "prenom": "RYAN ",
+   "brut": [
+      886.04
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      886.04
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -284.06
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 284.06
+}{
+   "nom": "CHIVOREZ",
+   "prenom": "VANESSA ",
+   "brut": [
+      1832.8
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1832.8
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -349.7
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 349.7
+}{
+   "nom": "CORDONNIER",
+   "prenom": "HONORINE ",
+   "brut": [
+      595.92
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      595.92
+   ],
+   "heures": [
+      130.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -21.0
+   ],
+   "reductions_logiciel": [
+      -191.05
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 191.05
+}{
+   "nom": "DELHUILLE",
+   "prenom": "SIMON ",
+   "brut": [
+      1554.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1554.62
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -6.0
+   ],
+   "reductions_logiciel": [
+      -498.41
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 498.41
+}{
+   "nom": "DEMANDRE",
+   "prenom": "PAULINE ",
+   "brut": [
+      2352.94
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      2352.94
+   ],
+   "heures": [
+      150.17
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -13.5
+   ],
+   "reductions_logiciel": [
+      -58.59
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 58.59
+}{
+   "nom": "DIEU",
+   "prenom": "LAETITIA ",
+   "brut": [
+      1928.22
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1928.22
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -360.19
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 360.19
+}{
+   "nom": "DURIEZ",
+   "prenom": "THEODORE ",
+   "brut": [
+      717.5
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      717.5
+   ],
+   "heures": [
+      63.0
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -95.67
+   ],
+   "reductions_logiciel": [
+      -168.68
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 168.68
+}{
+   "nom": "GONDEK",
+   "prenom": "VANESSA ",
+   "brut": [
+      1738.12
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1738.12
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -461.64000000000004
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 461.64
+}{
+   "nom": "GYDE",
+   "prenom": "BENJAMIN ",
+   "brut": [
+      1594.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1594.62
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -477.11
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 477.11
+}{
+   "nom": "HOTTE",
+   "prenom": "SEBASTIEN ",
+   "brut": [
+      3146.52
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      3146.52
+   ],
+   "heures": [
+      169.0
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      0
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 0.0
+}{
+   "nom": "L",
+   "prenom": "HENORET ALISON ",
+   "brut": [
+      788.71
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      788.71
+   ],
+   "heures": [
+      115.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -43.0
+   ],
+   "reductions_logiciel": [
+      -252.86
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 252.86
+}{
+   "nom": "MAGNOLIA",
+   "prenom": "EMILIE",
+   "brut": [
+      1594.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1594.62
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -477.11
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 477.11
+}{
+   "nom": "MARTIN",
+   "prenom": "VANESSA ",
+   "brut": [
+      1738.12
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1738.12
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -461.64000000000004
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 461.64
+}{
+   "nom": "MOREAU",
+   "prenom": "PAOLINE ",
+   "brut": [
+      875.04
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      875.04
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -4.0
+   ],
+   "reductions_logiciel": [
+      -280.53999999999996
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 280.54
+}{
+   "nom": "OURDOUILLE",
+   "prenom": "JESSY ",
+   "brut": [
+      6082.35
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      6082.35
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      0
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 0.0
+}{
+   "nom": "PANNEQUIN",
+   "prenom": "LYDIE ",
+   "brut": [
+      1533.12
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1533.12
+   ],
+   "heures": [
+      138.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -20.0
+   ],
+   "reductions_logiciel": [
+      -396.0
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 396.0
+}{
+   "nom": "PASSIGNY",
+   "prenom": "MICKAEL ",
+   "brut": [
+      545.63
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      545.63
+   ],
+   "heures": [
+      46.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -105.0
+   ],
+   "reductions_logiciel": [
+      -117.42
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 117.42
+}{
+   "nom": "PROYART",
+   "prenom": "SAMUEL ",
+   "brut": [
+      4000.0
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      4000.0
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      0
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 0.0
+}{
+   "nom": "SIEROTA",
+   "prenom": "CLAIRE ",
+   "brut": [
+      1594.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1594.62
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      -6.0
+   ],
+   "reductions_logiciel": [
+      -477.11
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 477.11
+}{
+   "nom": "TONNEAU",
+   "prenom": "AMANDINE ",
+   "brut": [
+      1594.62
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1594.62
+   ],
+   "heures": [
+      151.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -477.11
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 477.11
+}{
+   "nom": "VIVIER",
+   "prenom": "KELLY ",
+   "brut": [
+      1800.3
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1800.3
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -428.46999999999997
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 428.47
+}{
+   "nom": "WILLEMS",
+   "prenom": "LEO ",
+   "brut": [
+      1199.4
+   ],
+   "frais": [
+      0
+   ],
+   "brutabattu": [
+      1199.4
+   ],
+   "heures": [
+      158.67
+   ],
+   "heuressup": [
+      0
+   ],
+   "absences": [
+      0
+   ],
+   "reductions_logiciel": [
+      -384.53
+   ],
+   "salaire_de_base": [
+      0
+   ],
+   "CP": 1,
+   "reduction_calculee": 384.53
+}
