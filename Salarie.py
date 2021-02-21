@@ -17,7 +17,7 @@ PARAMETRES ={
     "absences":(("","Sous-total Absences","R"),("C","Congés payés","R")),
     "heuressup":(("","Heures supplémentaires 25%","B"),("","Heures supplémentaires 50%","B")),
     "reductions_logiciel":(("SS011.4","Réduction générale des cotisations patronales","R"),("AA311.4","Réduct. générale des cotisat. pat. retraite","R")),
-    "assedic":(("CH001","Assurance chômage TrA+TrB","R")),
+    "assedic":(("CH001","Assurance chômage TrA+TrB","R"),("CH001","Assurance chômage TrA+TrB - exo part apprenti","R")),
     "salaire_de_base":("","Salaire de base"),
     "CP":(("CP001","Congés payés","R"),("CP003","OPP BTP","R")),
 }
@@ -48,33 +48,36 @@ class Salarie:
         #On vérifie également le format de chaque feuille
         self.vérifie_feuille(feuil)
         self.feuille = feuil
-        per = self.definir_annee(feuil)
+        per = self._definir_annee(feuil)
         self.definir_nom(feuil)
-        self.charger_dictionnaire()
+        self._charger_dictionnaire()
 
 
         #ON AFFECTE LES LISTES A NOS ATTRIBUTS (les listes ont toutes la meme taille de 12 éléments au départ)
-        self.brut = self.chercher_valeurs(PARAMETRES["brut"])[per:]
-        self.frais = self.chercher_valeurs(PARAMETRES["frais"])[per:]
-        self.brutabattu = self.chercher_valeurs(PARAMETRES["brutabattu"])[per:]
-        self.heures = self.chercher_valeurs(PARAMETRES["heures"])[per:]
-        self.heuressup = self.chercher_valeurs(PARAMETRES["heuressup"])[per:]
-        self.absences = self.chercher_valeurs(PARAMETRES["absences"])[per:]
-        self.reductions_logiciel = self.chercher_valeurs(PARAMETRES["reductions_logiciel"])[per:]
-        self.salaire_de_base = self.chercher_valeurs(PARAMETRES["salaire_de_base"])[per:]
-        self.CP = (100/90) if sum(self.chercher_valeurs(PARAMETRES["CP"])[per:]) !=0 else 1
+        self.brut = self._chercher_valeurs(PARAMETRES["brut"])[per:]
+        self.frais = self._chercher_valeurs(PARAMETRES["frais"])[per:]
+        self.brutabattu = self._chercher_valeurs(PARAMETRES["brutabattu"])[per:]
+        self.heures = self._chercher_valeurs(PARAMETRES["heures"])[per:]
+        self.heuressup = self._chercher_valeurs(PARAMETRES["heuressup"])[per:]
+        self.absences = self._chercher_valeurs(PARAMETRES["absences"])[per:]
+        self.reductions_logiciel = self._chercher_valeurs(PARAMETRES["reductions_logiciel"])[per:]
+        self.salaire_de_base = self._chercher_valeurs(PARAMETRES["salaire_de_base"])[per:]
+        self.CP = (100/90) if sum(self._chercher_valeurs(PARAMETRES["CP"])[per:]) !=0 else 1
         
             
         
         self.reduction_calculee = fillon(sum(self.heures),sum(self.brut) - sum(self.frais), sum(self.brutabattu), Salarie.ANNEE) * self.CP 
         #DRAPEAU POUR CONDITION ULTERIEURE
-        self.reduction_calculee = 0 if sum(self.chercher_valeurs(PARAMETRES["assedic"])) == 0 else self.reduction_calculee
+        self.reduction_calculee = 0 if sum(self._chercher_valeurs(PARAMETRES["assedic"])) == 0 else self.reduction_calculee
         
         
         
         Salarie.LISTE_SALARIES.append(self)
 
         del self.dict
+
+   
+
 
     def __repr__(self):
         return "L'instance repésente {} {}".format(self.nom, self.prenom)
@@ -98,7 +101,7 @@ class Salarie:
         self.prenom = ' '.join(self.prenom)
 
     #ON CHARGE AU NIVEAU DE CHAQUE INSTANCE LE DICTIONNAIRE DE VALEURS
-    def charger_dictionnaire(self):
+    def _charger_dictionnaire(self):
         self.dict = {}
         
         #ON RECUPERE UNE LISTE DE CELLULE QU'UN CONVERTI EN NOMBRES POUR CHAQUE LIGNE DE LA FEUILLE
@@ -115,7 +118,7 @@ class Salarie:
             self.dict[(self.feuille.cell_value(ligne,0),self.feuille.cell_value(ligne,1))] = liste
 
     #ON DEFINIT UNE METHODE POUR QUE CHAQUE ATTRIBUT RECOIVE LES VALEURS ENREGISTREES PAR LE DICTIONNAIRE 'PARAMETRES'            
-    def chercher_valeurs(self,tupl):
+    def _chercher_valeurs(self,tupl):
         """Fonction de recherche d'une ou plusieurs cles dans le dictionnaire (self.dict) de l'instance de Salarié
 
         Args:
@@ -183,7 +186,7 @@ class Salarie:
             total_frais += round(sum(elt.frais),2)
 
 
-        return [totalheures, totalbrut, totalbrutabattu,  total_frais, total_reductions_logiciel, total_redutions_calculees]
+        return [round(totalheures,2), round(totalbrut,2), round(totalbrutabattu,2),  round(total_frais,2), total_reductions_logiciel, total_redutions_calculees]
 
     #ON VERIFIE QUE LA FEUILLE SOIT BIEN AU FORMAT ATTENDU
     @staticmethod
@@ -213,7 +216,7 @@ class Salarie:
 
     #ON DEFINIT LA PERIODE DE TRAVAIL EN DEFINISSANT UN SLICE
     @staticmethod
-    def definir_annee(feuil):
+    def _definir_annee(feuil):
         """Fonction qui alimente la variable de classe ANNEE et qui retourne le premier argument du slice
         pour définir la période de travail (exemple -5 si on doit travailler sur 5 colonnes)
 
@@ -237,7 +240,7 @@ class Salarie:
         Returns:
             [LIST]: [Liste des attributs]
         """
-        return [self.nom, self.prenom, sum(self.heures), sum(self.brut), sum(self.brutabattu), sum(self.reductions_logiciel), self.reduction_calculee]      
+        return [self.nom, self.prenom, round(sum(self.heures),2), round(sum(self.brut),2), round(sum(self.brutabattu),2), round(sum(self.frais),2), round(sum(self.reductions_logiciel),2), round(self.reduction_calculee,2), round(sum(self.reductions_logiciel) + self.reduction_calculee,2)]      
 
 
    

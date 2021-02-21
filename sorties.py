@@ -1,10 +1,25 @@
 from fpdf import FPDF
+from datetime import date
 
 from rich.console import Console
 from rich.table import Table
 from Salarie import Salarie
 
 console = Console()
+
+class PDF(FPDF):
+
+    def __init__(self):
+        super().__init__(orientation='L',unit='mm',format='A4')
+    
+    def footer(self):
+        self.set_y(-5)
+        #self.set_text_color(50)
+        self.set_font('Arial', 'B', 12)
+        self.cell(40,0,"Date : " + str(date.today().strftime("%d/%m/%Y")),0,0,align="L")
+        self.cell(210,0,"DOSSIER",0,0,align="C")
+        
+        self.cell(40,0,"Page : ",0,0,align="L")
 
 
 
@@ -57,45 +72,62 @@ def imprime_tableau():
     console.print(table)
 
 
-    
-
-    
-
-        
-
-
-
+ 
 def exporte_pdf():
-    for personne in Salarie.LISTE_SALARIES:
-        print(personne)
-
-
-    pdf = FPDF('L','mm','A4')
+    
+    #ON CREE LE FICHIER PDF
+    pdf = PDF()
     pdf.add_page()
-    pdf.set_font("Arial","B", 12)
-    pdf.cell(190,10, "CONTROLE DES REDUCTIONS GENERALES DE COTISATIONS", 1,0,"C")
 
+    #ON DEFINI LE TITRE DU DOCUMENT
+    pdf.set_font('Arial', 'B', 12)
+    pdf.set_text_color(255)
+    pdf.set_fill_color(120)
+    pdf.cell(280,10, "CONTROLE DES REDUCTIONS GENERALES DE COTISATIONS : " + str(Salarie.ANNEE), 1,1,"C", True)
 
-    titre = [("NOM",30), ("PRENOM",30), ("HEURES",25),("BRUT",25), ("BRUT ABAT.",25),("FRAIS",25), ("LOGICIEL",30),("CALCULEE",30), ("ECART",30)]
-    pdf.set_font("Arial","B",10)
-    pdf.ln(15)
+    
+    #ON DEFINIT LE TITRE DES COLONNES
+    pdf.set_font('Arial', 'B', 10)
+    pdf.set_text_color(0)
+    titre = [("NOM",55), ("PRENOM",55), ("HEURES",25),("BRUT",25), ("BRUT ABAT.",25),("FRAIS",25), ("LOGICIEL",25),("CALCULEE",25), ("ECART",20)]
+    pdf.ln(5)
     for tit in titre:
-        pdf.cell(tit[1],10,tit[0],1,0,align="C")
+        pdf.set_fill_color(170)
+        pdf.cell(tit[1],10,tit[0],1,0,align="C",fill=True)
     pdf.ln()
+    
+    #POUR CHAQUE SALARIE ON AJOUTE UNE LIGNE
+    for num, personne in enumerate(Salarie.LISTE_SALARIES):
 
-    for personne in Salarie.LISTE_SALARIES:
-        print(personne)
+        #ON PREVOIT DE NE METTRE QUE 20 SALARIES PAR PAGE    
+        if num % 20 ==0 and num!=0:
+            pdf.add_page()
+            pdf.ln(1)
+            for tit in titre:
+                pdf.cell(tit[1],10,tit[0],1,0,align="C",fill=True)
+            pdf.ln()
         
-        pdf.cell(30,10,personne.nom,1)
-        pdf.cell(30,10,personne.prenom,1)
+        pdf.cell(55,7,personne.nom,1)
+        pdf.cell(55,7,personne.prenom,1)
         donnees = personne.get_salarie()
-        print(donnees)
+        
         for num,elt in enumerate(donnees):
             if num > 1:
-                pdf.cell(titre[num][1],10,"%.2f" %elt,1,0,align="R")
+                
+                pdf.cell(titre[num][1],7,"%.2f" %elt,1,0,align="R") if elt !=0 else pdf.cell(titre[num][1],7,"",1,0,align="R")
                 
         pdf.ln()
-            
+
+    pdf.ln(5)
+    
+
+    #ON FINI PAS AJOUTER LES TOTAUX
+    donnees = Salarie.total_dossier()
+    
+    pdf.cell(110,10,"TOTAUX",1,0,align="C",fill=True)
+    for chiffres in donnees:
+        pdf.cell(25,10, "%.2f" %chiffres,1,0, align="R", fill=True)
+    pdf.cell(20,10,"%.2f" %(donnees[4]+donnees[5]),1,0,align="R",fill=True)
     pdf.output("tuto.pdf","F")
     
 
