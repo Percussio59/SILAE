@@ -1,3 +1,5 @@
+import json
+
 from fpdf import FPDF
 from datetime import date
 
@@ -6,6 +8,8 @@ from rich.table import Table
 from Salarie import Salarie
 
 console = Console()
+
+DOSSIER = "ALLo"
 
 class PDF(FPDF):
 
@@ -17,7 +21,7 @@ class PDF(FPDF):
         #self.set_text_color(50)
         self.set_font('Arial', 'B', 12)
         self.cell(40,0,"Date : " + str(date.today().strftime("%d/%m/%Y")),0,0,align="L")
-        self.cell(210,0,"DOSSIER",0,0,align="C")
+        self.cell(210,0,f"{DOSSIER}",0,0,align="C")
         
         self.cell(30,0,'Page %s' % self.page_no() + '/{nb}',0,0,align="R")
 
@@ -73,8 +77,9 @@ def imprime_tableau():
 
 
  
-def exporte_pdf():
-    
+def exporte_pdf(dossier="Dossie"):
+    global DOSSIER
+    DOSSIER = dossier
     #ON CREE LE FICHIER PDF
     pdf = PDF()
     pdf.alias_nb_pages()
@@ -134,14 +139,35 @@ def exporte_pdf():
 
 
 def exporte_dictionnaire():
+    """FONCTION SIMPLE DE MISE EN FORME DU DICTIONNAIRE CONTENANT LES SALARIES
+
+    Returns:
+        [Dict]: [Dictionnaire contenant les données salariés avec un numéro pour chaque salarié]
+    """
     dictionnaire = {}
-    dict_interne = {}
+    dictionnaire_interne = {}
     for num, personne in enumerate(Salarie.LISTE_SALARIES):
         for cle, valeurs in personne.__dict__.items():
             if cle !="feuille":
                 
-                dict_interne[cle]=getattr(personne, cle)
-                dictionnaire[num] = dict_interne
-                dict_interne={}
-        print(dictionnaire)
+                dictionnaire[cle]=getattr(personne, cle)
+        dictionnaire_interne[num] = dictionnaire
+        dictionnaire ={}
+
+    
+    return dictionnaire_interne
  
+
+def exporte_json(fichier="salaries_json.json"):
+    """Fonction pour exporter les données de chaque salarié dans un dictionnaire
+    dont la clé et un numéro entier.
+
+    Args:
+        fichier (str, optional): [Nom du fichier json de destination]. Defaults to "salaries_json.json".
+    """
+    dico = exporte_dictionnaire()
+    with open(fichier, "w") as write_file:
+        for num, personne in enumerate(Salarie.LISTE_SALARIES):
+            json.dump(dico[num], write_file, indent=3)
+    
+        
