@@ -1,28 +1,40 @@
 {
    "nom": "BARAN",
    "prenom": "AMELINE ",
+   "periode": [
+      "D\u00e9cembre 2021",
+      "Janvier 2021"
+   ],
    "brut": [
+      553.46,
       2836.4
    ],
    "frais": [
+      0,
       0
    ],
    "brutabattu": [
+      553.46,
       2836.4
    ],
    "heures": [
+      151.67,
       34.5
    ],
    "heuressup": [
+      0,
       0
    ],
    "absences": [
+      0,
       -121.17
    ],
    "reductions_logiciel": [
+      -177.33,
       0
    ],
    "salaire_de_base": [
+      0,
       0
    ],
    "CP": 1,
@@ -30,6 +42,9 @@
 }{
    "nom": "BARBERY",
    "prenom": "NOELLIE MARIE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1131.62
    ],
@@ -59,6 +74,9 @@
 }{
    "nom": "BEAUGRAND",
    "prenom": "ISABELLE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1738.12
    ],
@@ -88,6 +106,9 @@
 }{
    "nom": "BROUSSE",
    "prenom": "CHLOE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       358.75
    ],
@@ -117,35 +138,50 @@
 }{
    "nom": "CASAGRANDE",
    "prenom": "RYAN ",
+   "periode": [
+      "D\u00e9cembre 2021",
+      "Janvier 2021"
+   ],
    "brut": [
+      785.12,
       886.04
    ],
    "frais": [
+      0,
       0
    ],
    "brutabattu": [
+      785.12,
       886.04
    ],
    "heures": [
+      151.67,
       158.67
    ],
    "heuressup": [
+      0,
       0
    ],
    "absences": [
+      0,
       0
    ],
    "reductions_logiciel": [
+      -251.64,
       -284.06
    ],
    "salaire_de_base": [
+      0,
       0
    ],
    "CP": 1,
-   "reduction_calculee": 284.06
+   "reduction_calculee": 535.77
 }{
    "nom": "CHIVOREZ",
    "prenom": "VANESSA ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1832.8
    ],
@@ -175,6 +211,9 @@
 }{
    "nom": "CORDONNIER",
    "prenom": "HONORINE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       595.92
    ],
@@ -204,6 +243,9 @@
 }{
    "nom": "DELHUILLE",
    "prenom": "SIMON ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1554.62
    ],
@@ -233,6 +275,9 @@
 }{
    "nom": "DEMANDRE",
    "prenom": "PAULINE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       2352.94
    ],
@@ -262,6 +307,9 @@
 }{
    "nom": "DIEU",
    "prenom": "LAETITIA ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1928.22
    ],
@@ -291,6 +339,9 @@
 }{
    "nom": "DURIEZ",
    "prenom": "THEODORE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       717.5
    ],
@@ -320,6 +371,9 @@
 }{
    "nom": "GONDEK",
    "prenom": "VANESSA ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1738.12
    ],
@@ -349,6 +403,9 @@
 }{
    "nom": "GYDE",
    "prenom": "BENJAMIN ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1594.62
    ],
@@ -378,6 +435,9 @@
 }{
    "nom": "HOTTE",
    "prenom": "SEBASTIEN ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       3146.52
    ],
@@ -407,6 +467,9 @@
 }{
    "nom": "L",
    "prenom": "HENORET ALISON ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       788.71
    ],
@@ -436,6 +499,9 @@
 }{
    "nom": "MAGNOLIA",
    "prenom": "EMILIE",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1594.62
    ],
@@ -465,6 +531,9 @@
 }{
    "nom": "MARTIN",
    "prenom": "VANESSA ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1738.12
    ],
@@ -494,6 +563,9 @@
 }{
    "nom": "MOREAU",
    "prenom": "PAOLINE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       875.04
    ],
@@ -523,6 +595,9 @@
 }{
    "nom": "OURDOUILLE",
    "prenom": "JESSY ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       6082.35
    ],
@@ -552,6 +627,9 @@
 }{
    "nom": "PANNEQUIN",
    "prenom": "LYDIE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1533.12
    ],
@@ -581,6 +659,9 @@
 }{
    "nom": "PASSIGNY",
    "prenom": "MICKAEL ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       545.63
    ],
@@ -610,6 +691,9 @@
 }{
    "nom": "PROYART",
    "prenom": "SAMUEL ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       4000.0
    ],
@@ -639,6 +723,9 @@
 }{
    "nom": "SIEROTA",
    "prenom": "CLAIRE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1594.62
    ],
@@ -668,6 +755,9 @@
 }{
    "nom": "TONNEAU",
    "prenom": "AMANDINE ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1594.62
    ],
@@ -697,6 +787,9 @@
 }{
    "nom": "VIVIER",
    "prenom": "KELLY ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1800.3
    ],
@@ -726,6 +819,9 @@
 }{
    "nom": "WILLEMS",
    "prenom": "LEO ",
+   "periode": [
+      "Janvier 2021"
+   ],
    "brut": [
       1199.4
    ],
