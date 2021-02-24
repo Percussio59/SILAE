@@ -43,7 +43,7 @@ def fillon(heures, brut, brut_abattu, annee, majoree = False, ):
         if coef2 > R:
             coef2 = R
         
-        return round(min(coef1 * brut * 1.3, coef2 * brut_abattu),2)
+        return round(min(coef1 * brut * 1.3, coef2 * brut_abattu),2) if brut != brut_abattu else round(coef2 * brut_abattu,2)
         
     else:
         return 0    

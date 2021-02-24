@@ -26,4 +26,4 @@ else:
 sorties.imprime_tableau()
 sorties.exporte_pdf()
 sorties.exporte_json()
-
+sorties.export_csv()

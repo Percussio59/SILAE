@@ -54,6 +54,7 @@ class Salarie:
 
 
         #ON AFFECTE LES LISTES A NOS ATTRIBUTS (les listes ont toutes la meme taille de 12 éléments au départ)
+        self.periode = feuil.row_values(2,2,26)[base][per:]
         self.brut = self._chercher_valeurs(PARAMETRES["brut"])[per:]
         self.frais = self._chercher_valeurs(PARAMETRES["frais"])[per:]
         self.brutabattu = self._chercher_valeurs(PARAMETRES["brutabattu"])[per:]

@@ -1,5 +1,6 @@
 import json
 
+
 from fpdf import FPDF
 from datetime import date
 
@@ -170,4 +171,36 @@ def exporte_json(fichier="salaries_json.json"):
         for num, personne in enumerate(Salarie.LISTE_SALARIES):
             json.dump(dico[num], write_file, indent=3)
     
-        
+def export_csv(fichier="salaries_csv.csv"):
+    
+    
+
+    
+    
+
+    with open(fichier,"w") as fic:
+        fic.writelines("NOM ; PRENOM")
+        fic.writelines("\rPERIODE ; HEURES; BRUTS; BRUTS ABATTUS; FRAIS; RED SILAE \r")
+        for personne in Salarie.LISTE_SALARIES:
+            nblignes = len(personne.brut)        
+            fic.writelines(personne.nom +";"+personne.prenom+"\r")       
+            
+           
+            for a in range(nblignes):
+                fic.writelines((personne.periode[a]+";"))
+                fic.write(str(personne.heures[a]).replace(".",","))
+                fic.write(";")
+                fic.write(str(personne.brut[a]).replace(".",","))
+                fic.write(";")
+                fic.write(str(personne.brutabattu[a]).replace(".",","))
+                fic.write(";")
+                fic.write(str(personne.frais[a]).replace(".",","))
+                fic.write(";")
+                fic.write(str(personne.reductions_logiciel[a]).replace(".",","))
+
+
+
+
+                fic.writelines("\r")
+            fic.writelines("\r \r \r")
+                
